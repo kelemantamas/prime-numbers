@@ -8,5 +8,6 @@ int main()
 	int S = 54, N = 2, P = 3;
 	SimpleBacktrack simpleBacktrack;
 	simpleBacktrack.allPrime(N, S, P);
+	cout << "sad";
 	return 0;
 }
