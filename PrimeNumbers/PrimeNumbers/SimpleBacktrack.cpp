@@ -91,7 +91,6 @@ void SimpleBacktrack::allPrime(int N, int S, int P)
 	if (prime.size() < N)
 		return;
 	primeSum(0, N, S, 0);
-	cin.get();
 }
 
 

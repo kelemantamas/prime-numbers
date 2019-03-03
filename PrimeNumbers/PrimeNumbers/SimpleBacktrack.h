@@ -9,6 +9,7 @@ class SimpleBacktrack
 private: vector<int> set;
 		 vector<int> prime;
 		 bool isPrime(int x);
+		 vector <int> statistic;
 public:
 	SimpleBacktrack();
 	~SimpleBacktrack();
