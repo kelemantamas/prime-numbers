@@ -18,7 +18,7 @@
     <ClInclude Include="SimpleBacktrack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ForwardTracking.h">
+    <ClInclude Include="ForwardChecking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ForwardTracking.cpp">
+    <ClCompile Include="ForwardChecking.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

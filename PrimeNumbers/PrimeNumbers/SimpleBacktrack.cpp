@@ -21,18 +21,28 @@ bool SimpleBacktrack::isPrime(int x)
 {
 	// square root of x 
 	int sqroot = sqrt(x);
+
 	bool flag = true;
 
+
+	numberOfCalculations += 2;
+
 	// since 1 is not prime number 
-	if (x == 1)
+	if (x == 1) {
+		++numberOfCalculations;
 		return false;
+	}
+
 
 	// if any factor is found return false 
 	for (int i = 2; i <= sqroot; i++)
-		if (x % i == 0)
+		if (x % i == 0) {
+			++numberOfCalculations;
 			return false;
+		}
 
 	// no factor found 
+	++numberOfCalculations;
 	return true;
 }
 
@@ -41,7 +51,11 @@ void SimpleBacktrack::display()
 {
 	int length = set.size();
 	for (int i = 0; i < length; i++)
+	{
 		cout << set[i] << " ";
+		++numberOfCalculations;
+	}
+
 	cout << "\n";
 }
 
@@ -55,25 +69,33 @@ void SimpleBacktrack::primeSum(int total, int N, int S, int index)
 	{
 		// display the N primes 
 		display();
+		numberOfCalculations += 2;
 		return;
 	}
 
 	// if total is greater than S 
 	// or if index has reached last element 
-	if (total > S || index == prime.size())
+	if (total > S || index == prime.size()) {
+		numberOfCalculations += 2;
 		return;
+	}
+
 
 	// add prime[index] to set vector 
 	set.push_back(prime[index]);
+	++numberOfCalculations;
 
 	// include the (index)th prime to total 
 	primeSum(total + prime[index], N, S, index + 1);
+	++numberOfCalculations;
 
 	// remove element from set vector 
 	set.pop_back();
+	++numberOfCalculations;
 
 	// exclude (index)th prime 
 	primeSum(total, N, S, index + 1);
+	++numberOfCalculations;
 }
 
 // function to generate all primes 
@@ -83,14 +105,21 @@ void SimpleBacktrack::allPrime(int N, int S, int P)
 	for (int i = P + 1; i <= S; i++)
 	{
 		// if i is prime add it to prime vector 
-		if (isPrime(i))
+		if (isPrime(i)) {
 			prime.push_back(i);
+			numberOfCalculations += 2;
+		}
+
 	}
 
 	// if primes are less than N 
-	if (prime.size() < N)
+	if (prime.size() < N) {
+		++numberOfCalculations;
 		return;
+	}
+
 	primeSum(0, N, S, 0);
+	++numberOfCalculations;
 }
 
 

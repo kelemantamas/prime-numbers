@@ -16,5 +16,6 @@ public:
 	void display();
 	void primeSum(int total, int N, int S, int index);
 	void allPrime(int N, int S, int P);
+	int numberOfCalculations = 0;
 };
 

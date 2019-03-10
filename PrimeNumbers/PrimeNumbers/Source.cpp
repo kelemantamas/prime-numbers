@@ -1,5 +1,5 @@
 #include "SimpleBacktrack.h"
-#include "ForwardTracking.h"
+#include "ForwardChecking.h"
 #include <time.h>
 #include <iostream> 
 #include <vector> 
@@ -12,12 +12,14 @@ int main()
 	clock_t tStart = clock();
 	SimpleBacktrack simpleBacktrack;
 	simpleBacktrack.allPrime(N, S, P);
-	cout<<"Time taken SIMPLE BACTRACKING:\n"<< (double)(clock() - tStart) / CLOCKS_PER_SEC<< endl;
-	cout << "Forward tracking: " << endl;
+	cout << "Time taken SIMPLE BACKTRACKING: " << (double)(clock() - tStart) / CLOCKS_PER_SEC << endl;
+	cout << "Number of calculations: " << simpleBacktrack.numberOfCalculations << "\n";
+	cout << "\nForward checking: " << endl;
 	tStart = clock();
-	ForwardTracking forwardTracking;
-	forwardTracking.allPrime(N, S, P);
-	cout << "Time taken FORWARRD BACTRACKING:\n" << (double)(clock() - tStart) / CLOCKS_PER_SEC << endl;
+	ForwardChecking forwardChecking;
+	forwardChecking.allPrime(N, S, P);
+	cout << "Time taken FORWARD CHECK BACKTRACKING: " << (double)(clock() - tStart) / CLOCKS_PER_SEC << endl;
+	cout << "Number of calculations: " << forwardChecking.numberOfCalculations << "\n";
 	cin.get();
 
 	return 0;

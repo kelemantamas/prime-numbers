@@ -115,11 +115,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ForwardTracking.h" />
+    <ClInclude Include="ForwardChecking.h" />
     <ClInclude Include="SimpleBacktrack.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ForwardTracking.cpp" />
+    <ClCompile Include="ForwardChecking.cpp" />
     <ClCompile Include="SimpleBacktrack.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
