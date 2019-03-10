@@ -1,6 +1,6 @@
 # prime-numbers
 
-Feladatunk, hogy megírjunk egy prímkereső algoritmust háromféleképpen:
+Feladatunk, hogy megírjunk egy olyan algoritmust, amely megkeres N darab prímszámot, amelyeknek az összegük S háromféleképpen:
   1. nyers backtracking
   2. backtracking + MVR + forward checking
   3. backtracking + MVR + AC-3
